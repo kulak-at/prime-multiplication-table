@@ -1,6 +1,7 @@
 import { IPrimeGenerator } from "./IPrimeGenerator";
 import { BruteForcePrimeGenerator } from './BruteForcePrimeGenerator';
 import { SievePrimeGenerator } from './SievePrimeGenerator';
+import { WebPrimeGenerator } from './WebPrimeGenerator';
 
 export class PrimeGeneratorFactory {
     public static getBestGenerator() : IPrimeGenerator {
@@ -13,6 +14,8 @@ export class PrimeGeneratorFactory {
                 return new BruteForcePrimeGenerator();
             case 'sieve':
                 return new SievePrimeGenerator();
+            case 'web':
+                return new WebPrimeGenerator();
             default:
                 return new SievePrimeGenerator();
         }

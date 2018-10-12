@@ -19,8 +19,8 @@ if (arg.length < 3) {
     
     Command generates multiplication table of N prime numbers.
 
-    N       number             number of prime numbers to be generated
-    METHOD  sieve|bruteforce   algorithm used to generate prime numbers(default: sieve)`);
+    N       number                 number of prime numbers to be generated
+    METHOD  sieve|bruteforce|web   algorithm used to generate prime numbers(default: sieve)`);
     process.exit(1);
 }
 
@@ -34,4 +34,9 @@ if (arg.length >= 4) {
     generator = PrimeGeneratorFactory.getBestGenerator();
 }
 
-generatePrimeTable(n, generator).then(t => console.log(t));
+generatePrimeTable(n, generator)
+.then(t => console.log(t))
+.catch(e => {
+    console.error('Error occured: ' + e.message);
+    process.exit(1);
+});
