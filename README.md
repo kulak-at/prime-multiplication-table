@@ -10,7 +10,7 @@ Time spend: ~3h 20 min
 
 # Installation
 ```bash
-git clone <>
+git clone git@github.com:kulak-at/prime-multiplication-table.git
 cd prime-multiplication-table
 yarn
 yarn build
