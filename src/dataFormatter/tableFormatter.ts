@@ -25,6 +25,6 @@ export class TableFormatter implements IDataFormatter {
             ...(table.values.map((r,i) => [table.rows[i], ...r]))
         ];
 
-        return padTable(res).map(row => row.join(' | ')).join(os.EOL);
+        return padTable(res).map(row => '| ' + row.join(' | ') + ' |').join(os.EOL);
     }
 }
